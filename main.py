@@ -36,9 +36,7 @@ async def message_handler(update: Update, context: ContextTypes.DEFAULT_TYPE):
         dish = random.choice(available)
         data["used"].append(dish)
         save_dishes(data)
-        await update.message.reply_text(f"Сегодняшнее предложение:
-
-**{dish}**", parse_mode="Markdown")
+        await update.message.reply_text(f"Сегодняшнее предложение:\n**{dish}**", parse_mode="Markdown")
     elif text == "Добавить блюдо":
         await update.message.reply_text("Напиши новое блюдо:")
         return ADD_DISH
